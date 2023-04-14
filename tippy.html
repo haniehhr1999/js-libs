@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+        button:hover{
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.723);
+            
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Hover Me</button>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script>
+        tippy('#myButton', {
+            content: "I'm a Tippy tooltip! I'm a Tippy tooltip! I'm a Tippy tooltip!",
+            arrow: true,
+            placement: 'bottom',
+            // delay: 1000,
+            // trigger: 'click', //what does it mean?
+            maxWidth: 200, 
+            onShow(instance){
+                console.log('show =>' + instance);
+            },
+            onHidden(instance){
+                console.log('hidden =>' + instance);
+            }
+        });
+    </script>
+</body>
+</html>

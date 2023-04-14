@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="aos.css">
     <link rel="stylesheet" href="ihover.min.css">
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
     <style>
         html , body{
             margin: 0;
@@ -196,6 +197,15 @@
         <div class="box"></div>
         <div class="box"></div> -->
     </div>
+    <video id="my-video" class="video-js" controls preload="auto" width="300" height="400" poster="images/download.jpg" data-setup="{}">
+        <source src="videos/ac36828613713a417f3793a2509f79a045101827-480p.mp4" type="video/mp4" />
+        <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank" >supports HTML5 video</a>
+        </p>
+    </video>
     <h2>circles-- hover it!</h2>
     <div class="container2">
         <div class="col-sm-6">
@@ -281,6 +291,8 @@
           </div>
     </div>
 
+    
+
     <div id="app"></div>
     <button class="btn1">click me!</button>
     <button class="btn2 ">click me!</button>
@@ -294,9 +306,40 @@
 
     <!-- scripts -->
     <script src="sweetalert2@11.js"></script>
+    <script src="particles.min.js"></script>
+    <script src="app.js"></script>
+    <script src="wow.min.js"></script>
+    <script src="aos.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="sweetalert2@11.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+    <!-- <script src="//cdn.sc.gl/videojs-hotkeys/0.2/videojs.hotkeys.min.js"></script> -->
+    
+
 
     <script>
+        
+        
+
+        // videojs('my-video', {
+        //     controls: true, 
+        //     plugins: {
+        //         hotkeys: {
+        //             volumeStep: 0.1,
+        //             seekStep: 5,
+        //             // enableModifiersForNumbers: false,
+        //             enableMute: true,
+        //                enableVolumeScroll : true
+        //         },
+        //     },
+        // });
         // swal("Thanks for looking at my code", "You clicked the button!", "success");
         // Swal.fire(
         //     'The Internet?',
@@ -443,18 +486,7 @@
             .pauseFor(2500)
             .start();
     </script>
-    <script src="sweetalert2@11.js"></script>
-    <script src="particles.min.js"></script>
-    <script src="app.js"></script>
-    <script src="wow.min.js"></script>
-    <script src="aos.js"></script>
-    <script>
-        new WOW().init();
-    </script>
-    <script>
-        AOS.init();
-    </script>
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    
 
 </body>
 </html>

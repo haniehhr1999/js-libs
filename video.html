@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="video-js--css.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="300" height="400" poster="images/download.jpg" data-setup="{}">
+        <source src="videos/ac36828613713a417f3793a2509f79a045101827-480p.mp4" type="video/mp4" />
+        <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+    </video>
+    <script src="video.min--js.js"></script>
+    <script src="//cdn.sc.gl/videojs-hotkeys/0.2/videojs.hotkeys.min.js"></script>
+    <script>
+        videojs('my-video', {
+            plugins: {
+                hotkeys: {
+                volumeStep: 0.1,
+                seekStep: 5,
+                enableModifiersForNumbers: false
+                },
+            },
+        });
+    </script>
+</body>
+</html>

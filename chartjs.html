@@ -1,0 +1,271 @@
+<!-- libs: chartjs, videojs, -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            background: rgb(169, 0, 0);
+            background: rgb(255, 208, 0);
+            background: rgba(0, 0, 190, 0.4);
+            background: rgb(255, 3, 209);
+            background: rgba(255, 166, 0, 0.4);
+
+        } */
+        .parent{
+            width: 600px;
+            height: 250px;
+            margin: auto;
+            /* margin: 25px 0; */
+        }
+        .parent1{
+            /* margin: 25px 0; */
+            margin: auto;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <canvas id="myChart1"></canvas>
+    </div>
+    <div class="parent">
+        <canvas id="myChart2"></canvas>
+    </div>
+    <div class="parent1">
+        <canvas id="myChart3"></canvas>
+    </div>
+    <div class="parent">
+        <canvas id="myChart4"></canvas>
+    </div>
+    <div class="parent">
+        <canvas id="myChart5"></canvas>
+    </div>
+    <div class="parent1">
+        <canvas id="myChart6"></canvas>
+    </div>
+    <div class="parent1">
+        <canvas id="myChart7"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx1 = document.querySelector('#myChart1');
+        const ctx2 = document.querySelector('#myChart2');
+        const ctx3 = document.querySelector('#myChart3');
+        const ctx4 = document.querySelector('#myChart4');
+        const ctx5 = document.querySelector('#myChart5');
+        const ctx6 = document.querySelector('#myChart6');
+        const ctx7 = document.querySelector('#myChart7');
+
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'yellow', 'blue', 'pink', 'green', 'red'],
+                datasets: [{
+                    // label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(169, 0, 0, 0.7)',
+                        'rgba(255, 208, 0, 0.7)',
+                        'rgba(0, 0, 190, 0.7)',
+                        'rgba(255, 3, 209, 0.7)',
+                        'rgba(108, 255, 10, 0.7)',
+                        'rgba(169, 0, 0, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(169, 0, 0, 1)',
+                        'rgba(255, 208, 0, 1)',
+                        'rgba(0, 0, 190, 1)',
+                        'rgba(255, 3, 209, 1)',
+                        'rgba(108, 255, 10, 1)',
+                        'rgba(169, 0, 0, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['far', 'ord', 'khor', 'tir', 'mor', 'shah'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [3, 5, 2, 3, 12, 19 ],
+                    backgroundColor: [
+                        'black','black','black','black','black','black',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+                labels: ['far', 'ord', 'khor', 'tir', 'mor', 'shah'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [3, 5, 2, 3, 12, 19 ],
+                    backgroundColor: [
+                        'rgba(169, 0, 0, 1)',
+                        'rgba(255, 208, 0, 1)',
+                        'rgba(0, 0, 190, 1)',
+                        'rgba(255, 3, 209, 1)',
+                        'rgba(108, 255, 10, 1)',
+                        'purple'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        new Chart(ctx4, {
+            type: 'line',
+            data: {
+                labels: ['far', 'ord', 'khor', 'tir', 'mor', 'shah'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [3, 55, 12, 35, 12, 19 ],
+                    backgroundColor: 'rgba(255, 166, 0, 0.4)',
+                    borderColor: 'orange',
+                    borderWidth: 3,
+                    fill: true
+                },{
+                    label: '# of Votes',
+                    data: [20,65,35,19,25,82 ],
+                    backgroundColor: 'rgba(0, 0, 190, 0.4)',
+                    borderColor: 'blue',
+                    borderWidth: 3,
+                    fill: true
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        new Chart(ctx5, {
+            type: 'bar',
+            data: {
+                labels: ['far', 'ord', 'khor', 'tir', 'mor', 'shah'],
+                datasets: [{
+                    label: 'months users',
+                    data: [3, 5, 22, 53, 62, 19 ],
+                    backgroundColor: [
+                        'red'
+                        // 'blue',
+                        // 'orange',
+                        // 'green',
+                        // 'yellow',
+                        // 'aqua'
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'months sales',
+                    data: [10, 15, 7, 33, 12, 70 ],
+                    backgroundColor: [
+                        // 'lightgreen',
+                        // 'yellow',
+                        // 'violet',
+                        // 'red',
+                        // 'purple',
+                        'blue'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        new Chart(ctx6, {
+            type: 'radar',
+            data: {
+                labels: ['far', 'ord', 'khor', 'tir', 'mor', 'shah'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [3, 55, 12, 35, 12, 19 ],
+                    backgroundColor: 'rgba(255, 166, 0, 0.6)',
+                    borderColor: 'orange',
+                    borderWidth: 3,
+                    // fill: true
+                },{
+                    label: '# of Votes',
+                    data: [20,65,35,19,25,82 ],
+                    backgroundColor: 'rgba(0, 0, 190, 0.2)',
+                    borderColor: 'blue',
+                    borderWidth: 3,
+                    // fill: true
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        new Chart(ctx7, {
+            type: 'polarArea',
+            data: {
+                labels: ['far', 'ord', 'khor', 'tir', 'mor', 'shah'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [3, 55, 12, 35, 12, 19 ],
+                    backgroundColor: 'rgba(255, 166, 0, 0.6)',
+                    borderColor: 'orange',
+                    borderWidth: 3,
+                    // fill: true
+                },{
+                    label: '# of Votes',
+                    data: [20,65,35,19,25,82 ],
+                    backgroundColor: 'rgba(0, 0, 190, 0.2)',
+                    borderColor: 'blue',
+                    borderWidth: 1,
+                    // fill: true
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
